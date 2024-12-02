@@ -37,11 +37,12 @@ __doc__ += '\n' + parser.format_help()
 def main():
     args = parser.parse_args()
 
-    folder = 'data/47grad_nah_TIFF/'
+    folder = 'data/rgb_47_nah/'
     image_lst = os.listdir(folder)
 
     image_lst.sort()
     # read input images
+    # for idx in range(0, len(image_lst), 3):
     imgs = []
     for img_name in image_lst:
         img = cv.imread(cv.samples.findFile(folder + img_name))
@@ -56,13 +57,15 @@ def main():
 
     if status != cv.Stitcher_OK:
         print("Can't stitch images, error code = %d" % status)
-        sys.exit(-1)
+        print("can not process images with index ")
     # ![stitching]
+    else:
+        # cv.imwrite(f"data/example/output_part3_{idx}.jpg", pano)
+        cv.imwrite(f"data/example/output_rgb_all.jpg", pano)
 
-    cv.imwrite(args.output, pano)
-    print("stitching completed successfully. %s saved!" % args.output)
+        print("stitching completed successfully. %s saved!" % args.output)
 
-    print('Done')
+        print('Done')
 
 
 if __name__ == '__main__':

@@ -29,12 +29,18 @@ def read_tiff(path):
 
     return array
 
-
 if __name__ == '__main__':
     import plotly.express as px
+    from spectral import *
 
     img_arr = read_tiff('data/47grad_nah_TIFF/9327.TIFF')
+    img = []
+
+    img.append(img_arr[:,:,[11]])
+    img.append(img_arr[:,:,[6]])
+    img.append(img_arr[:,:,[0]])
+    save_rgb('rgb.jpg', img_arr, [11, 6, 0])
 
 
-    fig = px.imshow(img_arr[:,:,0])
+    fig = px.imshow(np.concatenate(img, axis=-1))
     fig.show()
