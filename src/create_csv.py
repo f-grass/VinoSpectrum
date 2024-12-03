@@ -20,6 +20,3 @@ df_all['id'] = df_all['image_name'].apply(lambda file: file[4:-4])
 df_relevant = pd.merge(left=df_relevant, right=df_all, on='id', how='left')
 
 df_relevant.to_csv(path_or_buf='data/relevant_images_gps.csv', index=False)
-
-# TGI Index
-# Microsoft ICE Wayback machine
