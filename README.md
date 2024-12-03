@@ -43,3 +43,7 @@
     - We map the exported image with QGIS via a 4 Point alignment to the gps map
 
 ## Result
+
+- We learn a lot
+- We had fun
+- We figure out that the geographical reference while merging non-orthogonal captured images is a challenge and represents a potential for future research
