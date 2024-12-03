@@ -47,3 +47,7 @@
 - We learn a lot
 - We had fun
 - We figure out that the geographical reference while merging non-orthogonal captured images is a challenge and represents a potential for future research
+
+---
+
+![logo.jpg](data%2Flogo.jpg)
